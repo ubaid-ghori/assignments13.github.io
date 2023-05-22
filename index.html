@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        
+    </style>
+    <button onclick="add()">Add User</button>
+    <div id="input"></div>
+    <script>
+        let person = [
+            {
+                name: "bilal",
+                age: 19,
+                email: "bilal.com"
+            },
+            {
+                name: "ali",
+                age: 18,
+                email: "ali.com"
+            },
+            {
+                name: "raza",
+                age: 22,
+                email: "raza.com"
+            }
+        ];
+        
+
+        function add() {
+            person.push({
+                name: prompt("Enter your name"),
+                age: prompt("Enter your age"),
+                email: prompt("Enter your email")
+            });
+
+            document.getElementById("input").innerHTML = person.map((element) => {
+                return `<div>
+                    Name: ${element.name} <br/>
+                    Age: ${element.age} <br/>
+                    Email: ${element.email} <br/>
+                    <br/>
+                </div>`;
+            });
+            
+            console.log(person);
+        }
+        
+    </script>
+</body>
+</html>
